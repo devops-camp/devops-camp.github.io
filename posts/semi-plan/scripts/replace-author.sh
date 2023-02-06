@@ -10,6 +10,8 @@ function replace_author() {
     username=$(echo ${filepath} | cut -f 3 -d '/')
 
     sed -i "/originAuthor/s/homework/${username}/g" ${filepath}
+
+    sed -i "/tags:/a\  - ${username}" ${filepath}
 }
 
 
